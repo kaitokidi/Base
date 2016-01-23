@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="16" height="11" tilewidth="16" tileheight="16" nextobjectid="49">
+ <tileset firstgid="1" name="OverWorld" tilewidth="16" tileheight="16" spacing="1" margin="1">
+  <image source="../Textures/OverworldTiles.png" width="307" height="137"/>
+ </tileset>
+ <tileset firstgid="145" name="OverworldObjects" tilewidth="48" tileheight="32" spacing="1" margin="1">
+  <image source="../Textures/OverworldObjects.png" width="148" height="133"/>
+ </tileset>
+ <tileset firstgid="157" name="dungeonDoorsHor" tilewidth="32" tileheight="20">
+  <image source="../Textures/dungeonDoorsHor.png" width="64" height="60"/>
+ </tileset>
+ <tileset firstgid="163" name="dungeonDoorsVer" tilewidth="20" tileheight="32">
+  <image source="../Textures/dungeonDoorsVer.png" width="40" height="96"/>
+ </tileset>
+ <tileset firstgid="169" name="Enemies" tilewidth="16" tileheight="16" spacing="1" margin="1">
+  <image source="../Textures/EnemiesToMap.png" width="171" height="171"/>
+ </tileset>
+ <imagelayer name="Image Layer 1">
+  <image source="../Textures/dungeon.png"/>
+ </imagelayer>
+ <layer name="Tile Layer 1" width="16" height="11">
+  <properties>
+   <property name="type" value="dungeon"/>
+  </properties>
+  <data encoding="csv">
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+</data>
+ </layer>
+ <objectgroup name="Exits" opacity="0.97">
+  <object id="39" name="left" gid="164" x="12" y="104" width="20" height="32">
+   <properties>
+    <property name="scene" value="pasadizoIz"/>
+    <property name="x" value="15"/>
+    <property name="y" value="5"/>
+   </properties>
+  </object>
+  <object id="40" name="bot" gid="162" x="112" y="164" width="32" height="20">
+   <properties>
+    <property name="scene" value="test"/>
+    <property name="x" value="23"/>
+    <property name="y" value="21"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="Enemies"/>
+</map>
