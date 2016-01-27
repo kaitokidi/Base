@@ -5,7 +5,9 @@
 #include <SFML/Window.hpp>
 
 class InputManager {
+
 private:
+
     struct helperK {
         bool b;
         sf::Keyboard::Key k;
@@ -43,21 +45,26 @@ private:
         }
     };
 
-    static std::map<int, helperK> keyboardBinds;
     static std::map<int, helperM> mouseBinds;
+    static std::map<int, helperK> keyboardBinds;
     static std::map<int, helperJA> joystickAxisBinds;
     static std::map<int, helperJB> joystickButtonBinds;
+
 public:
-    static void bind(int s, sf::Keyboard::Key k);
-    static void bind(int s, sf::Mouse::Button m);
-    static void bind(int s, int nPad, sf::Joystick::Axis ja);
-    static void bind(int s, int nPad, int nButton);
+
+    static void update();
+    static float action(int s);
+
     static bool isBinded(int s);
     static bool isKeyboardBinded(int s);
     static bool isMouseBinded(int s);
     static bool isJoystickBinded(int s);
-    static float action(int s);
-    static void update();
+
+    static void bind(int s, sf::Keyboard::Key k);
+    static void bind(int s, sf::Mouse::Button m);
+    static void bind(int s, int nPad, sf::Joystick::Axis ja);
+    static void bind(int s, int nPad, int nButton);
+
 };
 
 #endif // INPUTMANAGER_HPP

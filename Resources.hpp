@@ -10,8 +10,12 @@ public:
     //DEFINE AS STATIC THE RESOURCES YOU WANT
     //static sf::Texture ...
     static sf::Texture key;
+    static sf::Texture talkBox;
+
     static sf::Shader cInvert;
+
     static sf::Font pauseMenuFont;
+
     static std::vector<SpriteSheetDescription> descriptions;
 
 

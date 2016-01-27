@@ -1,7 +1,7 @@
 #include "InputManager.hpp"
 
-std::map<int, InputManager::helperK> InputManager::keyboardBinds;
 std::map<int, InputManager::helperM> InputManager::mouseBinds;
+std::map<int, InputManager::helperK> InputManager::keyboardBinds;
 std::map<int, InputManager::helperJA> InputManager::joystickAxisBinds;
 std::map<int, InputManager::helperJB> InputManager::joystickButtonBinds;
 

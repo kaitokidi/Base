@@ -57,13 +57,11 @@ void Game::changeScene(SceneChanger* sC) { // This will be called by any scene w
 
 void Game::loadScenes() {
 
-    /*
+    // ADD YOUR SCENES WITH A NAME OF REFERENCE AND THE INITIALIZATION
+    /* Example
     _scenes.insert(std::make_pair("menu",new SceneMenu(this, &_window)));
     _scenes.insert(std::make_pair("cutScene",new SceneCutScene(this, &_window,
-                                                               Resources::AnimationIntro,
-                                                               Resources::AnimationIntroTimers,
-                                                               Resources::AnimationIntroActions,
-                                                               Resources::AnimationTexts )));
+                                                               Resources::AnimationIntro)));
    */
 
 }

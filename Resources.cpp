@@ -4,7 +4,7 @@
 
 // sf::Texture        Resources::....
 sf::Texture            Resources::key;
-
+sf::Texture            Resources::talkBox;
 sf::Shader             Resources::cInvert;
 
 sf::Font               Resources::pauseMenuFont;
@@ -17,6 +17,7 @@ void Resources::load() {
     //LOAD THE INFORMATION IN THE VARIABLES
     //...loadFromFile(); or whatever
     key.loadFromFile                    (TEXTURETPATH+std::string("key.png"));
+    talkBox.loadFromFile                (TEXTURETPATH+std::string("talkBox.png"));
 
     descriptions = std::vector<SpriteSheetDescription>(spriteDescriptionsQtt);
     descriptions[linkSpritesDescriptions]       = loadDescription("linkSheet");
