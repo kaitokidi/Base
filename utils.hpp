@@ -108,16 +108,6 @@ typedef std::vector< std::vector < sf::IntRect> > SpriteSheetDescription;
 
 enum spriteSheetsDescriptions {
     linkSpritesDescriptions,
-    swordDescriptions,
-    octorokDescriptions,
-    rockProjDescription,
-    propsOverDescription,
-    dungeonDoorsHor,
-    dungeonDoorsVer,
-    objectsDescription,
-    penguinEnemyDescription,
-    penguinEnemyDescriptionPrep,
-    penguinEnemyDescriptionAttack,
     spriteDescriptionsQtt
 };
 

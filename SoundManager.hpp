@@ -25,18 +25,12 @@ public:
 
 private:
 
-     static sf::Music   menuMusic;
-     static sf::Music   overWorldMusic;
 
+    //INITIALIZE YOUR VARIABLES AS STATIC sf::Music or sf::SoundBuffer
+    /* Example:
+     static sf::Music   overWorldMusic;
      static sf::SoundBuffer     attackBuf;
-     static sf::SoundBuffer     softSword;
-     static sf::SoundBuffer     stabSword;
-     static sf::SoundBuffer     stepGround;
-     static sf::SoundBuffer     linkAttack0;
-     static sf::SoundBuffer     linkAttack1;
-     static sf::SoundBuffer     linkAttack2;
-     static sf::SoundBuffer     linkAttack3;
-     static sf::SoundBuffer     shootBigBall;
+    */
 
      static std::map<std::string, sf::Sound> soundMap;
      static std::map<std::string, sf::Music> musicMap;
@@ -46,17 +40,3 @@ private:
 };
 
 #endif // SOUNDMANAGER_HPP
-
-
-/*
-
-  it = mymap.find('b');
-  if (it != mymap.end())
-    mymap.erase (it);
-
-  // print content:
-  std::cout << "elements in mymap:" << '\n';
-  std::cout << "a => " << mymap.find('a')->second << '\n';
-  std::cout << "c => " << mymap.find('c')->second << '\n';
-  std::cout << "d => " << mymap.find('d')->second << '\n';
-*/

@@ -13,8 +13,8 @@ Game::Game() : _window(sf::VideoMode::getFullscreenModes()[0],"TOPKeK", sf::Styl
     SoundManager::load();
     TextBoxManager::load();
 
-    SoundManager::setGlobalSoundVolumen(DataManager::getFloat("SoundVolumen",100.0f));
-    SoundManager::setGlobalMusicVolumen(DataManager::getFloat("MusicVolumen",100.0f));
+    SoundManager::setGlobalSoundVolumen(100.0f);
+    SoundManager::setGlobalMusicVolumen(100.0f);
     //SoundManager::playMusic("overWorld");
     //SoundManager::setLoop(true, "overWorld");
 

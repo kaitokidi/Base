@@ -10,18 +10,18 @@ public:
     ~SceneChanger();
 
     std::string getNextSceneName();
-    sf::FloatRect getRect(sf::Vector2f offset);
     directions getChangeDirection();
     directions getOutsideDirection();
+    sf::FloatRect getRect(sf::Vector2f offset);
 
-    void setBounds(sf::FloatRect rect);
     void setDirection(directions dir);
+    void setBounds(sf::FloatRect rect);
 
+    directions _dir;
     sf::Vector2f _pos;
+    sf::FloatRect _bound;
     std::string _nextScene;
     sf::Vector2f _nextScenePos;
-    sf::FloatRect _bound;
-    directions _dir;
 
 
 };
