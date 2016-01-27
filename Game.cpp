@@ -72,6 +72,7 @@ void Game::loadScene(std::string sceneName) {
 
 
 void Game::initInput() {
+
     InputManager::bind(InputAction::menuUp, sf::Keyboard::Up);
     InputManager::bind(InputAction::menuDown, sf::Keyboard::Down);
     InputManager::bind(InputAction::menuEnter, sf::Keyboard::Return);
@@ -87,6 +88,7 @@ void Game::initInput() {
     InputManager::bind(InputAction::pause, sf::Keyboard::Escape);
     InputManager::bind(InputAction::action, sf::Keyboard::Space);
     InputManager::bind(InputAction::action, 0, 0);  // Xbox A
+
     InputManager::bind(InputAction::p1movementX, 0, sf::Joystick::Axis::X);
     InputManager::bind(InputAction::p2movementX, 1, sf::Joystick::Axis::X);
     InputManager::bind(InputAction::p1movementY, 0, sf::Joystick::Axis::Y);
