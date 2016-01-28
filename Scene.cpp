@@ -4,9 +4,9 @@
 Scene::Scene(Game* g, sf::RenderWindow* w, sceneTypes sT, std::string name) :
     _game(g), 
     _window(w),
-    _sceneName(name), 
     _focus(true),
     _killed(false),
+    _sceneName(name),
     _sceneType(sT)
      {
 }
@@ -15,7 +15,7 @@ Scene::~Scene(){}
 
 
 void Scene::init(sf::Vector2f ) {
-    //initView();
+
 }
 
 void Scene::run() {
@@ -34,7 +34,7 @@ void Scene::run() {
         update(timePerFrame.asSeconds());
         display();
         if (_killed) {
-            _game->changeScene(_nextSceneChanger);
+            _game->changeScene(_nextScene);
             _killed = false;
             return;
         }
@@ -89,14 +89,14 @@ void Scene::display() {
 
 void Scene::initView(sf::View* view, sf::Vector2i windowSize) {
     int windowX = _window->getSize().x, windowY = _window->getSize().y;
-    
+
     float xr = windowX / float(windowSize.x);
     float yr = windowY / float(windowSize.y);
 
     float aux;
     if (xr < yr) aux = 1/yr;
     else aux = 1/xr;
-    
+
     xr *= aux;
     yr *= aux;
     sf::Vector2f min,max;
@@ -110,36 +110,14 @@ void Scene::initView(sf::View* view, sf::Vector2i windowSize) {
     view->setViewport(sf::FloatRect(min.x,min.y,max.x,max.y));
 }
 
-void Scene::initViewExpanded(sf::View* view, sf::Vector2i windowSize) { // when the ratio is broken, the view gets broken
-	int windowX = _window->getSize().x, windowY = _window->getSize().y;
-
-	float xr = windowX / float(windowSize.x);
-	float yr = windowY / float(windowSize.y);
-
-	float aux;
-	if (xr < yr) aux = 1 / yr;
-	else aux = 1 / xr;
-
-	xr *= aux;
-	yr *= aux;
-	sf::Vector2f min;
-
-	min.x = (1.f - yr) / 2.f;
-	min.y = (1.f - xr) / 2.f;
-
-	view->reset(sf::FloatRect(0, 0, windowSize.x*(1 + 2 * min.x), windowSize.y*(1 + 2 * min.y)));
-	view->setViewport(sf::FloatRect(0,0,1,1));
-
-}
-
 void Scene::resizing() {
     sf::Vector2i size(_view.getSize());
     initView(&_view,size);
 }
 
-void Scene::changeScene(SceneChanger *sC) {
+void Scene::changeScene(std::string str){
     _killed = true;
-    _nextSceneChanger = sC;
+    _nextScene = str;
 }
 
 void Scene::withoutFocus() {

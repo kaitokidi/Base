@@ -28,7 +28,7 @@ Game::~Game() {
 
 void Game::start() {
     loadScenes();
-    changeScene(new SceneChanger(sf::Vector2f(0,0),"intro",sf::Vector2f(0,0)));
+    changeScene("test");
 
     while (_currentScene != nullptr) {
         _currentScene->run();
@@ -38,20 +38,27 @@ void Game::start() {
 }
 
 
-void Game::changeScene(SceneChanger* sC) { // This will be called by any scene when something trigers to change to anotheR scene
-    std::string sceneName = sC->_nextScene;
-    if (_currentScene != nullptr) {
-        _lastScene = _currentScene;
-        _currentScene->killScene();
-    }
+void Game::changeScene(std::string sceneName) {
     auto it = _scenes.find(sceneName);
     if (it == _scenes.end()) {
-        std::cout << "The selected scene does not exist: " << sceneName << std::endl;
-        exit(EXIT_FAILURE);
+
+        if(sceneName == "previous" && _lastScene != nullptr){
+
+            _currentScene = _lastScene;
+            _lastScene = nullptr;
+
+        } else {
+            std::cout << "The selected scene does not exist: " << sceneName << std::endl;
+            exit(EXIT_FAILURE);
+        }
+    } else {
+        if (_currentScene != nullptr) {
+            _lastScene = _currentScene;
+            _currentScene->killScene();
+        }
+        _currentScene = (*it).second;
+        _currentScene->init();
     }
-    
-    _currentScene = (*it).second;
-    _currentScene->init();    
 }
 
 
@@ -64,6 +71,8 @@ void Game::loadScenes() {
                                                                Resources::AnimationIntro)));
    */
 
+    _scenes.insert(std::make_pair("test", new SceneTest(this, &_window, "test2")));
+    _scenes.insert(std::make_pair("test2", new SceneTest(this, &_window, "previous")));
 }
 
 void Game::loadScene(std::string sceneName) {

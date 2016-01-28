@@ -21,26 +21,32 @@ public:
     std::string getSceneName();
 
 protected:
+
+    bool _focus;
     Game* _game;
-    sf::RenderWindow* _window;
     sf::View _view;
     std::string _sceneName;
-    bool _focus;
+    sf::RenderWindow* _window;
+
+    void render();
+
+    virtual void display();
+    virtual void resizing();
 
     virtual void processInput();
     virtual void update(float deltaTime);
-    void render();
+    virtual void changeScene(std::string str);
     virtual void render(sf::RenderTarget* target);
-    void initView(sf::View* view, sf::Vector2i windowSize);
-	void initViewExpanded(sf::View* view, sf::Vector2i windowSize);
-	virtual void resizing();
-    virtual void changeScene(SceneChanger *sC);
 
-    virtual void display();
+    void initView(sf::View* view, sf::Vector2i windowSize);
+    void initViewExpanded(sf::View* view, sf::Vector2i windowSize);
+
+
+
 private: 
     bool _killed;
     sceneTypes _sceneType;
-    SceneChanger* _nextSceneChanger;
+    std::string _nextScene;
     void withoutFocus();
 
 };

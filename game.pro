@@ -30,7 +30,8 @@ SOURCES += main.cpp \
     DataManager.cpp \
     StatsBar.cpp \
     TextBoxManager.cpp \
-    InputManager.cpp
+    InputManager.cpp \
+    SceneTest.cpp
 
 HEADERS += utils.hpp \
         Resources.cpp \
@@ -55,4 +56,5 @@ HEADERS += utils.hpp \
     DataManager.hpp \
     StatsBar.hpp \
     TextBoxManager.hpp \
-    InputManager.hpp
+    InputManager.hpp \
+    SceneTest.hpp

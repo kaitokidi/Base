@@ -5,7 +5,7 @@
 
 class SceneChanger {
 public:
-    SceneChanger();
+    SceneChanger();/*
     SceneChanger(sf::Vector2f pos, std::string nextScene, sf::Vector2f nextScenePos);
     ~SceneChanger();
 
@@ -22,8 +22,7 @@ public:
     sf::FloatRect _bound;
     std::string _nextScene;
     sf::Vector2f _nextScenePos;
-
-
+*/
 };
 
 

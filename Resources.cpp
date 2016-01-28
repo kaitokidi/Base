@@ -17,10 +17,10 @@ void Resources::load() {
     //LOAD THE INFORMATION IN THE VARIABLES
     //...loadFromFile(); or whatever
     key.loadFromFile                    (TEXTURETPATH+std::string("key.png"));
-    talkBox.loadFromFile                (TEXTURETPATH+std::string("talkBox.png"));
+    //talkBox.loadFromFile                (TEXTURETPATH+std::string("talkBox.png"));
 
-    descriptions = std::vector<SpriteSheetDescription>(spriteDescriptionsQtt);
-    descriptions[linkSpritesDescriptions]       = loadDescription("linkSheet");
+   // descriptions = std::vector<SpriteSheetDescription>(spriteDescriptionsQtt);
+   // descriptions[linkSpritesDescriptions]       = loadDescription("linkSheet");
 
     if (!cInvert.loadFromFile           (SHADERPATH+std::string("invert.frag"), sf::Shader::Fragment)) exit(EXIT_FAILURE);
 

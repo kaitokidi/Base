@@ -1,7 +1,7 @@
 #include "SceneChanger.hpp"
 
 SceneChanger::SceneChanger() {}
-
+/*
 SceneChanger::SceneChanger(sf::Vector2f pos, std::string nextScene, sf::Vector2f nextScenePos) :
     _pos(pos),
     _nextScene(nextScene),
@@ -39,3 +39,4 @@ directions SceneChanger::getOutsideDirection() {
     else if (int(_nextScenePos.y)==0) return directions::down;
     else return directions::directionsQtty;
 }
+*/
